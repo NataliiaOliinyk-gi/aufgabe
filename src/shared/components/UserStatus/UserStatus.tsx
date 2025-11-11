@@ -7,7 +7,7 @@ const delay = (ms: number): Promise<void> => {
 };
 
 const UserStatus: FC = () => {
-    // useState: speichert den aktuellen Benutzerstatus als String
+  // useState: speichert den aktuellen Benutzerstatus als String
   const [userStatus, setUserStatus] = useState<string>("");
   // useState: speichert eine Fehlermeldung oder null, falls kein Fehler vorliegt
   const [error, setError] = useState<string | null>(null);
