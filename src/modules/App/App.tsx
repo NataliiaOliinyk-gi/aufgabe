@@ -1,19 +1,18 @@
 import UserStatus from "../../shared/components/UserStatus/UserStatus";
 import Products from "../../shared/components/Products/Products";
+import SectionLayout from "../../shared/components/SectionLayout/SectionLayout";
 
 import "../../shared/styles/style.css";
 
 function App() {
   return (
     <>
-      <div>
-        <h2>Aufgabe 1</h2>
+      <SectionLayout title="Aufgabe 1">
         <UserStatus />
-      </div>
-      <div>
-        <h2>Aufgabe 2</h2>
+      </SectionLayout>
+       <SectionLayout title="Aufgabe 2, 3">
         <Products />
-      </div>
+      </SectionLayout>
     </>
   );
 }

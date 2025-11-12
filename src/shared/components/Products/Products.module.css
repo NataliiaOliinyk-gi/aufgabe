@@ -1,0 +1,32 @@
+/* Container für die Karten */
+.cardsContainer {
+    /* Grid-Layout aktivieren */
+    display: grid;
+    /* Abstand zwischen den Karten */
+    gap: 16px;
+    /* flexible Spalten für kleine/mittlere Screens */
+    grid-template-columns: repeat(auto-fit,
+            minmax(200px, 1fr));
+    padding: 20px;
+}
+
+/* Karten selbst – nur etwas Deko */
+.card {
+    padding: 16px;
+    border: 1px solid #888585;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(116, 126, 126, 0.2);
+}
+
+.title{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Ab 992px: maximal 4 Spalten */
+@media (min-width: 992px) {
+    .cardsContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

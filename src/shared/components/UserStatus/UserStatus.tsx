@@ -1,6 +1,8 @@
 import type { FC } from "react";
 import { useState, useEffect } from "react";
 
+import styles from "./UserStatus.module.css";
+
 // Hilfsfunktion: liefert ein Promise zurück, das nach ms Millisekunden aufgelöst wird
 const delay = (ms: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -48,8 +50,8 @@ const UserStatus: FC = () => {
 
   return (
     <div>
-      <div>
-        <p>UserStatus: </p>
+      <div className={styles.container}>
+        <p className={styles.title}>UserStatus: </p>
         {/* Anzeige des aktuellen Benutzerstatus */}
         <span>{userStatus}</span>
       </div>

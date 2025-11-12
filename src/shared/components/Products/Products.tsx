@@ -1,5 +1,7 @@
 import type { FC } from "react";
 
+import styles from "./Products.module.css";
+
 // Ein einfaches Produkt-Interface
 interface IProduct {
   id: string;
@@ -35,6 +37,9 @@ const originalProducts: IProduct[] = [
   { id: "1", name: "Laptop", price: 1000 },
   { id: "2", name: "Mouse", price: 50 },
   { id: "3", name: "Keyboard", price: 80 },
+  { id: "4", name: "Laptop", price: 1200 },
+  { id: "5", name: "Mouse", price: 55 },
+  { id: "6", name: "Keyboard", price: 78 },
 ];
 
 // Anwenden des Rabatts auf Produkt mit id "2"
@@ -44,14 +49,14 @@ const discountedProducts = applyDiscount(originalProducts, "2");
 const Products: FC = () => {
     // Liste der ursprünglichen Produkte als JSX-Elemente
   const elementsOriginal = originalProducts.map((product) => (
-    <li key={product.id}>
+    <li key={product.id} className={styles.card}>
       {product.name}: {product.price} €
     </li>
   ));
 
   // Liste der rabattierten Produkte als JSX-Elemente
   const elementsDiscounted = discountedProducts.map((product) => (
-    <li key={product.id}>
+    <li key={product.id} className={styles.card}>
       {product.name}: {product.price} €
     </li>
   ));
@@ -59,14 +64,14 @@ const Products: FC = () => {
   return (
     <div>
       <div>
-        <h3>Original-Liste:</h3>
+        <h3 className={styles.title}>Original-Liste:</h3>
         {/* Anzeige der ursprünglichen Produktliste */}
-        <ul>{elementsOriginal}</ul>
+        <ul className={styles.cardsContainer}>{elementsOriginal}</ul>
       </div>
       <div>
-        <h3>Neue Liste mit Rabatt:</h3>
+        <h3 className={styles.title}>Neue Liste mit Rabatt:</h3>
         {/* Anzeige der neuen Produktliste mit rabattiertem Preis für ein Produkt */}
-        <ul>{elementsDiscounted}</ul>
+        <ul className={styles.cardsContainer}>{elementsDiscounted}</ul>
       </div>
     </div>
   );
